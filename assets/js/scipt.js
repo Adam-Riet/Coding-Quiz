@@ -55,13 +55,15 @@ var questions = [
 
   //Variables 
 
-var quizSection = document.querySelector("quizSection");
-var startQuiz = document.querySelector("startQuiz");
-var viewHighScore = document.querySelector("viewHighScore");
-var timeLeft = document.querySelector("#timeLeft");
+var quizSection = document.querySelector("#quizSection");
+var startQuiz = document.querySelector("#startQuiz");
+var viewHighScore = document.querySelector("#viewHighScore");
+var timer = document.querySelector("#timeLeft");
 
   
-  
+startQuiz.addEventListener("click", function () {
+    setTime();
+});  
   
   
   
@@ -77,15 +79,13 @@ var timeLeft = document.querySelector("#timeLeft");
     // Sets interval in variable
     var timerInterval = setInterval(function() {
       secondsLeft--;
-      timeLeft.textContent = secondsLeft + " seconds left.";
+      timer.textContent = secondsLeft + " seconds left.";
   
       if(secondsLeft === 0) {
-        // Stops execution of action at set interval
         clearInterval(timerInterval);
-        // Calls function to create and append image
+        
        }
   
     }, 1000);
   }
   
-  setTime();
