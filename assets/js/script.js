@@ -54,7 +54,7 @@ var questions = [
   ];
 
   //Variables 
-
+var totalScore = 0;
 var quizSection = document.querySelector("#quizSection");
 var answers = document.querySelector("#answerSection")
 var startQuiz = document.querySelector("#startQuiz");
@@ -97,6 +97,7 @@ function displayQuestion(index) {
     });
   } else {
 timer.textContent = "Quiz complete!";
+
 }
 }
 
@@ -120,10 +121,12 @@ timer.textContent = "Quiz complete!";
       timer.textContent = secondsLeft + " seconds left.";
   
       if(secondsLeft === 0) {
+        
+        if (displayQuestion )
+        
         clearInterval(timerInterval);
         timer.textContent = "Game over!";
-        
-       }
+        }
   
     }, 1000);
   }
