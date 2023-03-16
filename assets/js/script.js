@@ -65,9 +65,43 @@ var timer = document.querySelector("#timeLeft");
 //Eventlistener to start quiz/timer  
 startQuiz.addEventListener("click", function () {
     setTime();
-    
+    displayQuestion(0);
+});
 
-});  
+//Creating function to display questions/answers
+function displayQuestion(index) {
+  if (index < questions.length) {
+    quizSection.innerHTML = "";
+    answers.innerHTML = "";
+
+    var currentQuestion = questions[index];
+    quizSection.textContent = currentQuestion.question;
+
+    for (var key in currentQuestion.answers) {
+      var answerOption = document.createElement("button");
+      answerOption.textContent = key.toUpperCase() + ": " + currentQuestion.answers[key];
+      answerOption.setAttribute("data-answer", key);
+      answerOption.classList.add("answer-button");
+      answers.appendChild(answerOption);
+    }
+
+    var answerButtons = document.querySelectorAll(".answer-button");
+    answerButtons.forEach(function (button) {
+      button.addEventListener("click", function (event)  {
+        var userAnswer = event.target.getAttribute("data-answer");
+        if (userAnswer === currentQuestion.correctAnswer) {
+
+        }
+        displayQuestion(index + 1);
+      });
+    });
+  } else {
+timer.textContent = "Quiz complete!";
+}
+}
+
+
+
   
   
   
