@@ -90,6 +90,7 @@ function displayQuestion(index) {
       button.addEventListener("click", function (event)  {
         var userAnswer = event.target.getAttribute("data-answer");
         if (userAnswer === currentQuestion.correctAnswer) {
+          window.alert("Correct!");
 
         }
         displayQuestion(index + 1);
@@ -121,9 +122,7 @@ timer.textContent = "Quiz complete!";
       timer.textContent = secondsLeft + " seconds left.";
   
       if(secondsLeft === 0) {
-        
-        if (displayQuestion.index > 5 )
-        clearInterval(timerInterval)
+       
         clearInterval(timerInterval);
         timer.textContent = "Game over!";
         }
