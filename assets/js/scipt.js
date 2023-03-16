@@ -60,9 +60,15 @@ var startQuiz = document.querySelector("#startQuiz");
 var viewHighScore = document.querySelector("#viewHighScore");
 var timer = document.querySelector("#timeLeft");
 
-  
+//Eventlistener to start quiz/timer  
 startQuiz.addEventListener("click", function () {
     setTime();
+    var randomIndex = Math.floor(Math.random() * questions.length);
+    var randomQuestion = questions[randomIndex];
+    var displayQuestionElement = document.getElementById("quizSection")
+    displayQuestionElement.textContent = randomQuestion.question;
+
+
 });  
   
   
@@ -83,6 +89,7 @@ startQuiz.addEventListener("click", function () {
   
       if(secondsLeft === 0) {
         clearInterval(timerInterval);
+        timer.textContent = "Game over!";
         
        }
   
