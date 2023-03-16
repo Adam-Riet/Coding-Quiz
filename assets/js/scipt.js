@@ -56,9 +56,11 @@ var questions = [
   //Variables 
 
 var quizSection = document.querySelector("#quizSection");
+var answers = document.querySelector("#answerSection")
 var startQuiz = document.querySelector("#startQuiz");
 var viewHighScore = document.querySelector("#viewHighScore");
 var timer = document.querySelector("#timeLeft");
+
 
 //Eventlistener to start quiz/timer  
 startQuiz.addEventListener("click", function () {
@@ -66,6 +68,8 @@ startQuiz.addEventListener("click", function () {
     var randomIndex = Math.floor(Math.random() * questions.length);
     var randomQuestion = questions[randomIndex];
     var displayQuestionElement = document.getElementById("quizSection")
+    
+    
     displayQuestionElement.textContent = randomQuestion.question;
 
 
