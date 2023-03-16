@@ -89,11 +89,16 @@ function displayQuestion(index) {
     answerButtons.forEach(function (button) {
       button.addEventListener("click", function (event)  {
         var userAnswer = event.target.getAttribute("data-answer");
+        
+        
         if (userAnswer === currentQuestion.correctAnswer) {
           window.alert("Correct!");
 
-        }
-        displayQuestion(index + 1);
+
+        } else if (userAnswer !== currentQuestion.correctAnswer)
+          window.alert("Incorrect!")
+        
+          displayQuestion(index + 1);
       });
     });
   } else {
