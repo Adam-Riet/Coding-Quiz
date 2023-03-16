@@ -122,8 +122,8 @@ timer.textContent = "Quiz complete!";
   
       if(secondsLeft === 0) {
         
-        if (displayQuestion )
-        
+        if (displayQuestion.index > 5 )
+        clearInterval(timerInterval)
         clearInterval(timerInterval);
         timer.textContent = "Game over!";
         }
