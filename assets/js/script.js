@@ -131,6 +131,15 @@ function displayQuestion(index) {
 
           var userInitials = prompt("Please enter your initials:");
 
+          var userIdentifier = userInitials;
+          var userTotalScore = {
+            indentifier: userIdentifier,
+            score: totalScore
+          };
+            //Putting user data into a JSON string
+            var userTotalJSON = JSON.stringify(userTotalScore);
+            //Saving string to local storage
+            localStorage.setItem("quizScore", userTotalJSON);
 
     
     
