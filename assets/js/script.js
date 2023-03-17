@@ -53,7 +53,7 @@ var questions = [
       }
   ];
 
-  //Variables 
+//Variables 
 var totalScore = 0;
 var quizSection = document.querySelector("#quizSection");
 var answers = document.querySelector("#answerSection")
@@ -127,8 +127,20 @@ function displayQuestion(index) {
           } else {
           clearInterval(timerInterval);
           timer.textContent = "Finished!";
-    }
+            //Collecting user intials and saving their score
+
+          var userInitials = prompt("Please enter your initials:");
+
+
+    
+    
+    
+    
+        }
   }
+
+
+
 
           
         
