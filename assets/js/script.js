@@ -61,13 +61,12 @@ var startQuiz = document.querySelector("#startQuiz");
 var viewHighScore = document.querySelector("#viewHighScore");
 var timer = document.querySelector("#timeLeft");
 
-var tinerInverval;
-
+var timerInterval;
 var secondsLeft = 60;
 
 //Function to start timer
 function setTime() {
-  var timerInterval = setInterval(function() {
+  timerInterval = setInterval(function() {
     secondsLeft--;
     timer.textContent = secondsLeft + " seconds left.";
 
@@ -122,16 +121,15 @@ function displayQuestion(index) {
           totalScore -= 5;
         
           displayQuestion(index + 1);
+        });
+      });
+    
+          } else {
+          clearInterval(timerInterval);
+          timer.textContent = "Finished!";
+    }
+  }
 
-          });
-
-     
-    });
-  } else {
-
-timer.textContent = "Quiz complete!";
-
-
-}
-}
-
+          
+        
+        
