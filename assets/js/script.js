@@ -42,7 +42,7 @@ var questions = [
         correctAnswer: "b"
       },
       {
-        question: "What is the purpose of the this keyword in JavaScript?",
+        question: "What is the purpose of the 'this' keyword in JavaScript?",
         answers: {
           a: "To refer to the current function",
           b: "To refer to the global object",
@@ -77,6 +77,8 @@ function displayQuestion(index) {
     var currentQuestion = questions[index];
     quizSection.textContent = currentQuestion.question;
 
+
+//Loop to cycle through questions
     for (var key in currentQuestion.answers) {
       var answerOption = document.createElement("button");
       answerOption.textContent = key.toUpperCase() + ": " + currentQuestion.answers[key];
@@ -93,30 +95,26 @@ function displayQuestion(index) {
         
         if (userAnswer === currentQuestion.correctAnswer) {
           window.alert("Correct!");
+          totalScore += 5;
+
 
 
         } else if (userAnswer !== currentQuestion.correctAnswer)
           window.alert("Incorrect!")
+          totalScore -= 5;
         
           displayQuestion(index + 1);
       });
     });
   } else {
+
 timer.textContent = "Quiz complete!";
 
+
 }
 }
 
-
-
-  
-  
-  
-  
-  
-  
-  
-  //Event Listener to start Timer
+//Event Listener to start Timer
   
   var secondsLeft = 60;
 
