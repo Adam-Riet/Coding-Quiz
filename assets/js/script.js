@@ -118,7 +118,7 @@ function displayQuestion(index) {
 
         } else if (userAnswer !== currentQuestion.correctAnswer)
           window.alert("Incorrect!")
-          totalScore -= 5;
+          totalScore = Math.max(totalScore - 5, 0);
         
           displayQuestion(index + 1);
         });
