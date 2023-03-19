@@ -61,6 +61,10 @@ var startQuiz = document.querySelector("#startQuiz");
 var timer = document.querySelector("#timeLeft");
 var timerInterval;
 var secondsLeft = 60;
+var endQuiz = false;
+
+
+
 
 //Function to start timer
 function setTime() {
@@ -85,7 +89,11 @@ startQuiz.addEventListener("click", function () {
 
 //Creating function to display questions/answers
 function displayQuestion(index) {
-  if (index < questions.length) {
+  if (endQuiz) {
+    return;
+  }
+
+    if (index < questions.length) {
     quizSection.innerHTML = "";
     answers.innerHTML = "";
 
@@ -123,6 +131,7 @@ function displayQuestion(index) {
       });
     
           } else {
+          endQuiz = true;
           clearInterval(timerInterval);
           timer.textContent = "Finished!";
             //Collecting user intials and saving their score
@@ -145,6 +154,8 @@ function displayQuestion(index) {
     
         }
   }
+
+
 
 // Code to reveal high scores
 
