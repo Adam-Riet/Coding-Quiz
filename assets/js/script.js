@@ -53,14 +53,12 @@ var questions = [
       }
   ];
 
-//Variables 
+//Variables for timer/quesitons/answers
 var totalScore = 0;
 var quizSection = document.querySelector("#quizSection");
 var answers = document.querySelector("#answerSection")
 var startQuiz = document.querySelector("#startQuiz");
-var viewHighScore = document.querySelector("#viewHighScore");
 var timer = document.querySelector("#timeLeft");
-
 var timerInterval;
 var secondsLeft = 60;
 
@@ -148,9 +146,10 @@ function displayQuestion(index) {
         }
   }
 
+// Code to reveal high scores
+
+var viewHighScore = document.querySelector("#viewHighScore");
 
 
-
-          
         
         
