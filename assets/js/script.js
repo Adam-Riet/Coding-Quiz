@@ -124,10 +124,10 @@ function displayQuestion(index) {
 
 
 
-        } else if (userAnswer !== currentQuestion.correctAnswer)
-          window.alert("Incorrect!")
+        } else if (userAnswer !== currentQuestion.correctAnswer) {
+          window.alert("Incorrect!");
           totalScore = Math.max(totalScore - 5, 0);
-        
+        }
           displayQuestion(index + 1);
         });
       });
@@ -187,13 +187,9 @@ function restartGame() {
   endQuiz = false;
   clearInterval(timerInterval);
   timer.textContent = "";
-
   answers.innerHTML = "";
-
   displayQuestion(0);
   setTime();
-  
-  
 }
 
 resetButton.addEventListener("click", restartGame);
