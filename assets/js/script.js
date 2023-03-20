@@ -147,20 +147,32 @@ function displayQuestion(index) {
             var userTotalJSON = JSON.stringify(userTotalScore);
             //Saving string to local storage
             localStorage.setItem("quizScore", userTotalJSON);
-
-    
-    
-    
-    
-        }
+    }
   }
 
 
 
-// Code to reveal high scores
+// Code to reveal high scores/list high scores after quiz
 
 var viewHighScore = document.querySelector("#viewHighScore");
 
+viewHighScore.addEventListener("click", function () {
+  displayHighScores();
+  });
 
-        
+function displayHighScores() {
+
+  var savedTotalJSON = localStorage.getItem("quizScore");
+
+  var savedScore = JSON.parse(savedTotalJSON);
+
+  var highScoreList = document.querySelector("#highScoreList");
+
+  var listItem = document.createElement("li");
+  listItem.textContent = savedScore.indentifier + ": " + savedScore.score;
+
+  highScoreList.appendChild(listItem);
+
+  
+}         
         
