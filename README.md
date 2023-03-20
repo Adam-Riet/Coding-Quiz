@@ -16,4 +16,4 @@ Last but not least would be the UofU for providing a lot of lessons and examples
 
 https://adam-riet.github.io/Coding-Quiz/
 
-(![Alt text](https://github.com/Adam-Riet/Coding-Quiz/blob/main/assets/images/Screenshot%202023-03-20%20at%2012.41.22%20PM.png))
+![Alt text](https://github.com/Adam-Riet/Coding-Quiz/blob/main/assets/images/Screenshot%202023-03-20%20at%2012.41.22%20PM.png)
