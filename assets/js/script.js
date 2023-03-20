@@ -189,6 +189,7 @@ function restartGame() {
   answers.innerHTML = "";
 
   displayQuestion(0);
+  setTime();
   
   
 }
