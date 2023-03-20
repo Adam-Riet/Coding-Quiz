@@ -172,7 +172,25 @@ function displayHighScores() {
   listItem.textContent = savedScore.indentifier + ": " + savedScore.score;
 
   highScoreList.appendChild(listItem);
-
-  
 }         
         
+//Reset button 
+
+var resetButton = document.querySelector(".reset-button");
+
+function restartGame() {
+
+  totalScore = 0;
+  secondsLeft = 60;
+  endQuiz = false;
+  clearInterval(timerInterval);
+  timer.textContent = "";
+
+  answers.innerHTML = "";
+
+  displayQuestion(0);
+  
+  
+}
+
+resetButton.addEventListener("click", restartGame);
