@@ -76,6 +76,8 @@ function setTime() {
      
       clearInterval(timerInterval);
       timer.textContent = "Game over!";
+      restartGame()
+
       }
 
   }, 1000);
