@@ -136,7 +136,7 @@ function displayQuestion(index) {
           timer.textContent = "Finished!";
             //Collecting user intials and saving their score
 
-          var userInitials = prompt("Please enter your initials:");
+          var userInitials = prompt("Please enter your initials:").toUpperCase();
 
           var userIdentifier = userInitials;
           var userTotalScore = {
@@ -152,7 +152,7 @@ function displayQuestion(index) {
 
 
 
-// Code to reveal high scores/list high scores after quiz
+// Code to reveal high scores
 
 var viewHighScore = document.querySelector("#viewHighScore");
 
