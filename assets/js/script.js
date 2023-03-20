@@ -1,5 +1,6 @@
 // Code containing questions
 
+//Question lay out thanks to https://simplestepscode.com/javascript-quiz-tutorial/
 var questions = [
     {
       question: "Which of the following is used to define a function in JavaScript?",
@@ -126,6 +127,7 @@ function displayQuestion(index) {
 
         } else if (userAnswer !== currentQuestion.correctAnswer) {
           window.alert("Incorrect!");
+          //Thank you to stackoverflow for helping with math.max to prevent negative score
           totalScore = Math.max(totalScore - 5, 0);
         }
           displayQuestion(index + 1);
