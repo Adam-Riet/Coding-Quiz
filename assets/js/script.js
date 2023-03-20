@@ -181,7 +181,7 @@ function displayHighScores() {
 var resetButton = document.querySelector(".reset-button");
 
 function restartGame() {
-
+//Reseting everything except high scores
   totalScore = 0;
   secondsLeft = 60;
   endQuiz = false;
@@ -193,3 +193,24 @@ function restartGame() {
 }
 
 resetButton.addEventListener("click", restartGame);
+
+//Option to hide highscores after viewing them
+
+var hideHighScore = document.querySelector("#hideHighScore");
+
+viewHighScore.addEventListener("click", function () {
+  displayHighScores();
+  viewHighScore.style.display = "none";
+  hideHighScore.style.display = "block";
+});
+
+hideHighScore.addEventListener("click", function () {
+  hideHighScores();
+  viewHighScore.style.display = "block";
+  hideHighScore.style.display = "none";
+});
+
+function hideHighScores() {
+  var highScoreList = document.querySelector("#highScoreList");
+  highScoreList.innerHTML = "";
+}
